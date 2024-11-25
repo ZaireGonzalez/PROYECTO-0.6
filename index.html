@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISPOA - Sistema POS Agrícola</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <button id="logoutBtn" onclick="logout()">Cerrar sesión</button>
+        <h1>SISPOA</h1>
+        <h2>SISTEMA POS AGRÍCOLA</h2>
+    </div>
+
+    <div id="registerForm" class="module">
+        <h3>Formulario de Registro</h3>
+        <form id="formRegistro">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="correo">Correo Electrónico:</label><br>
+            <input type="email" id="correo" required><br>
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" required><br>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div id="modules" class="modules">
+        <div class="module" id="ventas" style="display:none;">
+            <h3>Ventas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de Venta</th>
+                        <th>Valor de la Venta</th>
+                        <th>Tipo de Tarjeta</th>
+                        <th>Impuesto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Venta Directa</td>
+                        <td>$100,000</td>
+                        <td>Débito</td>
+                        <td>$5,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="anulaciones" style="display:none;">
+            <h3>Anulaciones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de Venta</th>
+                        <th>Valor de la Venta</th>
+                        <th>Tipo de Tarjeta</th>
+                        <th>Impuesto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Venta Anulada</td>
+                        <td>$100,000</td>
+                        <td>Débito</td>
+                        <td>$5,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="cierres" style="display:none;">
+            <h3>Cierres</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de Cierre</th>
+                        <th>Valor Total</th>
+                        <th>Impuestos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Cierre Diario</td>
+                        <td>$200,000</td>
+                        <td>$10,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="consultaSaldo" style="display:none;">
+            <h3>Consulta de Saldo</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Saldo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>$500,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="pqrs" style="display:none;">
+            <h3>Peticiones, Quejas o Reclamos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Petición</th>
+                        <th>Queja</th>
+                        <th>Reclamo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Juan Pérez</td>
+                        <td>123456789</td>
+                        <td>Pedido no recibido</td>
+                        <td>Retraso en entrega</td>
+                        <td>Reclamo por calidad</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="inventario" style="display:none;">
+            <h3>Inventario</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Tomate</td>
+                        <td>100</td>
+                        <td>$1,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+
+        <div class="module" id="proveedores" style="display:none;">
+            <h3>Proveedores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2024</td>
+                        <td>Proveedora XYZ</td>
+                        <td>123456789</td>
+                        <td>Calle 123</td>
+                        <td>Tomate</td>
+                        <td>$2,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="goBack()">Volver al Menú</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
